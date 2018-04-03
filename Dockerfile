@@ -10,6 +10,7 @@ RUN apt-get update -y \
     && apt-get remove -y wget \
     && apt-get autoremove -y \
     && rm -rf /var/lib/apt/lists/* \
-    && /mystem -v
+    && mv /mystem /bin/mystem \
+    && mystem -v
 
-ENTRYPOINT ["/mystem"]
+ENTRYPOINT ["mystem"]
